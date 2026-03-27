@@ -6,6 +6,7 @@ npm -v </br>
 npm create vite@latest moj-projekt </br>
 cd moj-projekt </br>
 npm install </br>
+code . </br>
 npm run dev </br>
 git init </br>
 
