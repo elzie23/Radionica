@@ -1,18 +1,10 @@
 <script setup>
-import Counter from './components/Counter.vue'
-import UserForm from './components/UserForm.vue'
-import NarudzbeLista from './components/NarudzbeLista.vue'
-import Header from './components/Header.vue'
+import HomePage from './views/HomePage.vue'
 </script>
 
 <template>
   <div class="app">
-    <Header />
-    <div class="mainScreen">
-      <Counter />
-      <UserForm />
-      <NarudzbeLista />
-    </div>
+    <HomePage />
   </div>
 </template>
 
