@@ -1,10 +1,9 @@
 <script setup>
-import HomePage from './views/HomePage.vue'
 </script>
 
 <template>
   <div class="app">
-    <HomePage />
+    <RouterView />
   </div>
 </template>
 

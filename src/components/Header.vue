@@ -19,11 +19,10 @@ const openMenu = () => {
         </button>
 
         <div class="menu" v-if="isOpen">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Contact</a>
+            <RouterLink class="links" to="/">Home</RouterLink>
+            <RouterLink class="links" to="/products">Products</RouterLink>
+            <RouterLink class="links" to="/contact">Contact</RouterLink>
         </div>
-
     </div>
 </template>
 
@@ -75,12 +74,12 @@ h2 {
   justify-content: space-between;
   flex-direction: row;
 }
-a {
+.links {
   color: #6b4f4f;
   text-decoration: none;
   margin: 0 10px;
 }
-a:hover {
+.links:hover {
   text-decoration: underline;
 }
 </style>

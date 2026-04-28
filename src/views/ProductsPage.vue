@@ -1,0 +1,44 @@
+<script setup>   
+import Button from '../components/Button.vue'
+import Header from '../components/Header.vue'
+import NarudzbeLista from '../components/NarudzbeLista.vue'
+import Footer from '../components/Footer.vue';
+import { useRouter } from 'vue-router'
+
+const router = useRouter();
+
+const goToContactPage = () => {
+  router.replace('/contact')
+}
+</script>
+
+<template>
+  <div class="home-page">
+    <Header />
+    <div class="mainScreen">
+        <p>Products Page</p>
+        <button @click="goToContactPage">Contact</button>
+    </div>
+    <Footer />
+  </div>
+</template>
+
+<style scoped>
+.home-page {
+  width: 100%;
+}
+.mainScreen {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 20px;
+  border: 2px solid #6b4f4f;
+  border-radius: 1%;
+  width: 90%;
+  margin-left: 5%;
+  box-sizing: border-box; 
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('images/slika1.jpg');
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+</style>
