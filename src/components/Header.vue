@@ -1,17 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isOpen = ref(false)
 
 const openMenu = () => {
   isOpen.value = !isOpen.value
 }
+const router = useRouter();
+
+const goToContactPage = () => {
+  router.replace('/')
+}
 
 </script>
 
 <template>
     <div class="navbar">
-        <h2>Bakery</h2>
+        <RouterLink to="/" class="homelink"><h2>Bakery</h2></RouterLink>
         <button class="hamburger" @click="openMenu">
             <span></span>
             <span></span>
@@ -27,6 +33,11 @@ const openMenu = () => {
 </template>
 
 <style scoped>
+.homelink {
+  text-decoration: none;
+  color: #6b4f4f;
+  margin-left: 10%;
+}
 h2 {
   text-align: center;
   color: #6b4f4f;
