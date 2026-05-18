@@ -3,6 +3,17 @@ import Button from '../components/Button.vue'
 import Header from '../components/Header.vue'
 import NarudzbeLista from '../components/NarudzbeLista.vue'
 import Footer from '../components/Footer.vue';
+import { useRouter } from 'vue-router'
+import { supabase } from '../../utils/supabase'
+const router = useRouter();
+const logOut = async () => {
+  const { error } = await supabase.auth.signOut()
+  if (error) console.error('Error logging out:', error.message)
+  else {
+    console.log('User logged out')
+    router.replace('/login')
+  }
+}
 </script>
 
 <template>
@@ -12,6 +23,7 @@ import Footer from '../components/Footer.vue';
     <NarudzbeLista />
     <Button variant="clear" @click="() => console.log('Prethodna stranica')">Prethodna stranica</Button>
     <Button variant="clear" @click="() => console.log('Sljedeća stranica')">Sljedeća stranica</Button>
+    <Button class="logoutbtn" @click="logOut()">Log Out</Button>
     </div>
     <Footer />
   </div>
@@ -38,5 +50,11 @@ import Footer from '../components/Footer.vue';
 Button:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-2px);
+}
+.logoutbtn {
+  position: relative;
+  margin-bottom: auto;
+  margin-left: 80%;
+  font-size: large;
 }
 </style>
