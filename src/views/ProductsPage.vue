@@ -46,8 +46,9 @@ onMounted(() => {
       <div class="proizvodi">
         <p>Products Page</p>
         <p>Our products:</p>
-           <div v-for="product in products" :key="product.naziv">
-            <p>{{ product.naziv }} - {{ product.cijena }} KM</p>
+           <div class="product" v-for="product in products" :key="product.naziv">
+            <p>{{ product.naziv }}</p>
+            <p>{{ product.cijena }} KM</p>
            </div>
         </div>
         <Button @click="goToContactPage" variant="clear" class="btn-dolje">Contact us</Button>
@@ -68,16 +69,52 @@ onMounted(() => {
   gap: 20px;
   justify-content: left;
 }
+.product {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 4%;
+  box-shadow: #3b2d2d 2px 2px 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .proizvodi {
+    width: 90%;
+    margin-left: 5%;
+    align-items: center;
+    height: 65vh;
+    gap: 10px;
+  }
+  .product {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    gap: 10px;
+  }
+  .mainScreen {
+    height: 75vh !important;
+    background-size: cover;
+    background-position: center;
+  }
+  Button {
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+    margin-bottom: 1%;
+  }
 
+}
 .mainScreen {
   margin-top: 5%;
   padding: 20px;
   border: 2px solid #6b4f4f;
   border-radius: 4%;
+  display: flex;
+  flex-direction: column;
   width: 90%;
   height: 60vh;
   margin-left: 5%;
-  box-sizing: border-box; 
   background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('images/slika1.jpg');
   background-size: cover;
 }
@@ -92,7 +129,7 @@ onMounted(() => {
 }
 Button {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 10%;
   width: 150px;
   height: 40px;
 }
@@ -102,6 +139,7 @@ Button {
   position: relative;
   left:auto;
   right: 0;
+  margin-bottom: 10%;
   margin-left: 85%;
 }
 .btn-dolje:hover {
